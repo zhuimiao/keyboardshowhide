@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ueK-Fk-aiO" userLabel="password">
+                                <rect key="frame" x="198" y="419" width="204" height="30"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.41038254390000001" green="1" blue="0.1562587872" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="F88-iX-XsV"/>
+                                    <constraint firstAttribute="width" constant="204" id="NXI-zx-Ay4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="yw7-8h-rEo"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rtJ-ve-kwv" userLabel="username">
+                                <rect key="frame" x="198" y="247" width="204" height="30"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.36567706929999999" green="1" blue="0.19780724929999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="PeP-We-v09"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ueK-Fk-aiO" secondAttribute="bottom" constant="151" id="2aD-rZ-4hC"/>
+                            <constraint firstItem="ueK-Fk-aiO" firstAttribute="width" secondItem="rtJ-ve-kwv" secondAttribute="width" id="QXM-ui-vMB"/>
+                            <constraint firstItem="ueK-Fk-aiO" firstAttribute="trailing" secondItem="rtJ-ve-kwv" secondAttribute="trailing" id="VZQ-9a-gmX"/>
+                            <constraint firstItem="ueK-Fk-aiO" firstAttribute="top" secondItem="rtJ-ve-kwv" secondAttribute="bottom" constant="142" id="oZV-m4-DKq"/>
+                            <constraint firstItem="ueK-Fk-aiO" firstAttribute="leading" secondItem="rtJ-ve-kwv" secondAttribute="leading" id="vvO-lK-50A"/>
+                            <constraint firstItem="ueK-Fk-aiO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wCP-T1-fk5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="password" destination="ueK-Fk-aiO" id="NtP-eD-aye"/>
+                        <outlet property="username" destination="rtJ-ve-kwv" id="fZ2-kX-xI3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="283" y="387"/>
+        </scene>
+    </scenes>
+</document>
