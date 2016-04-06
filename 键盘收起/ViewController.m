@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *username;
 @property (weak, nonatomic) IBOutlet UITextField *password;
 @property (nonatomic,assign) CGFloat nowOffsetY;
+@property (weak, nonatomic) IBOutlet UIButton *sureBtn;
 
 @end
 
@@ -57,13 +58,18 @@
         tf = self.password;
     }
     
-    CGFloat chazhi = height - tf.bottomToSuper - self.nowOffsetY;
-    if (chazhi < self.nowOffsetY) {
+    CGFloat chazhi;
+    if (tf == self.username) {
+        chazhi = self.password.bottomToSuper - height - self.nowOffsetY;
+    }else if (tf == self.password){
+        chazhi = self.sureBtn.bottomToSuper - height - self.nowOffsetY;
+    }
+    if (chazhi >  0) {
         return;
     }
     if (chazhi) {
         [UIView animateWithDuration:duration animations:^{
-            self.view.top -=chazhi;
+            self.view.top +=chazhi;
         } completion:^(BOOL finished) {
             self.nowOffsetY = chazhi;
         }];
@@ -87,7 +93,7 @@
     
     if (self.nowOffsetY ) {
         [UIView animateWithDuration:duration animations:^{
-            self.view.top +=self.nowOffsetY ;
+            self.view.top =0 ;
         } completion:^(BOOL finished) {
             self.nowOffsetY = 0;
         }];

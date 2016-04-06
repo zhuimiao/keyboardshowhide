@@ -423,6 +423,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "miao.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -434,6 +435,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "miao.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -504,6 +506,7 @@
 				64966D1C1BE9077B008E5576 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		64966D1D1BE9077B008E5576 /* Build configuration list for PBXNativeTarget "键盘收起Tests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +515,7 @@
 				64966D1F1BE9077B008E5576 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		64966D201BE9077B008E5576 /* Build configuration list for PBXNativeTarget "键盘收起UITests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +524,7 @@
 				64966D221BE9077B008E5576 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
