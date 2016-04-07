@@ -12,7 +12,6 @@
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *username;
 @property (weak, nonatomic) IBOutlet UITextField *password;
-@property (nonatomic,assign) CGFloat nowOffsetY;
 @property (weak, nonatomic) IBOutlet UIButton *sureBtn;
 
 @end
@@ -21,7 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.nowOffsetY = 0;
+
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
@@ -58,11 +57,13 @@
         tf = self.password;
     }
     
+    NSLog(@"height %f",height);
     CGFloat chazhi;
     if (tf == self.username) {
-        chazhi = self.password.bottomToSuper - height - self.nowOffsetY;
+        chazhi =  self.password.bottomToSuper- height  - self.view.top;
     }else if (tf == self.password){
-        chazhi = self.sureBtn.bottomToSuper - height - self.nowOffsetY;
+    
+        chazhi = self.sureBtn.bottomToSuper - height  -self.view.top;
     }
     if (chazhi >  0) {
         return;
@@ -71,7 +72,7 @@
         [UIView animateWithDuration:duration animations:^{
             self.view.top +=chazhi;
         } completion:^(BOOL finished) {
-            self.nowOffsetY = chazhi;
+    
         }];
     }
     
@@ -83,21 +84,12 @@
     NSDictionary *userInfo = notifi.userInfo;
     
     CGFloat duration =[[userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] floatValue];
-    UITextField *tf;
-    if (self.username.isFirstResponder == YES) {
-        tf = self.username;
-    }
-    if (self.password.isFirstResponder == YES) {
-        tf = self.password;
-    }
     
-    if (self.nowOffsetY ) {
         [UIView animateWithDuration:duration animations:^{
             self.view.top =0 ;
         } completion:^(BOOL finished) {
-            self.nowOffsetY = 0;
+    
         }];
-    }
 }
 
 - (void)didReceiveMemoryWarning {
